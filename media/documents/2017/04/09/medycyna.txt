@@ -1,0 +1,36 @@
+Seminarium:
+1.Metoda -> minucje
+2. Rys historyczny -> kryminalistyka, biometria, akwizycja (jak się to robi), do czego służy/jest wykorzystywane
+3. Typowe obrazy linii papilarnych (wirowe, ...)
+4. Jak wygląda algorytm bazujący na minucjach?
+5. Wyszukanie odcisku identycznego z badanym. Jak?
+6. Ile minucji musi być zbieżnych aby uznać dwa odciski za ten sam odcisk.
+7. Rodzaje czytników linii papilarnych.
+
+
+
+Projekt:
+Zbiór podzielić losowo na dwie części: do testowanie i do uczenia.
+
+Testowy -> będzie służył do porównywania.
+Uczenia -> do budowania algorytmu.
+
+Kryterium poprawności działania lagorytmu -> częstość poprawnych diagnoz.
+
+K najbliższych sąsiadów:
+2 miary odległości do najbliższego sąsiada -> Euklidesowa i jakaś inna
+Znajdujemy k najbliższych sąsiadów i sprawdzamy do jakiej klasy należy większość z tych
+sąsiadów
+
+Najbliższa średnia:
+2 miary odległości do najbliższego sąsiada -> Euklidesowa i jakaś inna
+Wyznaczamy średni obiekt w każdej klasie i porównujemy z nimi obiekty badane.
+
+1 najbliższy sąsiad:
+2 miary odległości do najbliższego sąsiada -> Euklidesowa i jakaś inna
+Szukamy 1 najbliższego sąsiada.
+
+
+Te pliki o których mówił Kurzyński to się jakoś tak nazywały:
+new_thyroid.data
+new_thyroid.names
