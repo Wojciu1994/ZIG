@@ -6,31 +6,56 @@
     </head>
 
     <body>
-        <!-- List of uploaded documents -->
         {% if documents %}
+        <h4>Lista wrzuconych na serwer plików:</h4>
             <ul>
                 {% for document in documents %}
-                    <li><a href="{{ document.docfile.url }}">{{ document.docfile.name }}, {{ document.id }}</a></li>
+                    <li>{{"nazwa pliku :   "}}<a href="{{ document.docfile.url }}">{{ document.docfile.name }}</a>{{"     id = "}}{{ document.id }}</li> 
                 {% endfor %}
             </ul>
         {% else %}
-            <p>No documents.</p>
+            <p>Brak dokumentów.</p>
         {% endif %}
 
-        <!-- Upload form. Note enctype attribute! -->
         <form action="{% url "list" %}" method="post" enctype="multipart/form-data">
             {% csrf_token %}
             <p>{{ form.non_field_errors }}</p>
 
-            <p>{{ form.docfile.label_tag }} {{ form.docfile.help_text }}</p>
+            <h4>Wybierz pliki, z których chcesz stworzyć model:</h4>
+            <p>{{ form.docfile }}</p>
 
-            <p>
-                {{ form.docfile.errors }}
-                {{ form.docfile }}
-            </p>
-
-            <p><input type="submit" value="Upload"/></p>
+            <p><input type="submit" value="Wgraj pliki na serwer"/></p>
         </form>
+
+
+        <form action="email">
+        <h4> Wpisz swój adres email:</h4>
+            <input name="nazwa" />
+        </form>
+
+        <h4>Wybierz indeks pliku, który chcesz użyć do stworzenia modelu:</h4>
+
+        <form action="...">
+
+            <select name="nazwa">
+            {% if documents %}
+
+            {% for document in documents %}
+
+            
+            <option>{{document.id}}</option>
+
+
+            {% endfor %}
+            </select>
+
+            {% endif %}
+
+        </form>
+
+        <p><input type="submit" value="Przetwarzanie"/></p>
+
+
     </body>
 
 </html>

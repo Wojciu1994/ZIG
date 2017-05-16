@@ -23,14 +23,6 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^myapp/', include('myapp.urls')),
-    url(r'^accounts/login/$', 'myproject.views.login'),
-    url(r'^accounts/auth/$', 'myproject.views.auth_view'),
-    url(r'^accounts/logout/$', 'myproject.views.logout'),
-    url(r'^accounts/loggedin/$', 'myproject.views.loggedin'),
-    url(r'^accounts/invalid/$', 'myproject.views.invalid_login'),
-
-    url(r'^accounts/create_user/$', 'myproject.views.create_user'),
-    url(r'^accounts/create_user_success/$', 'myproject.views.create_user_success'),
     
     url(r'^$', RedirectView.as_view(url='/myapp/list/', permanent=True)),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
